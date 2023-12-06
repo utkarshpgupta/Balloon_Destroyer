@@ -25,7 +25,7 @@ void loop() {
 
     // Execute the command
     switch (command) {
-      case 'H':
+      case 'H':  // Case for deploying the robot
         M2->run(BACKWARD);// right
         M4->run(BACKWARD);//up
         M3->run(FORWARD);//up
@@ -34,7 +34,7 @@ void loop() {
         M4->run(RELEASE);//up
         M3->run(RELEASE);//up
         break;
-      case 'B':
+      case 'B':  // Case for folding down the robot
         M2->run(FORWARD);// right
         M4->run(FORWARD);//up
         M3->run(BACKWARD);//up
