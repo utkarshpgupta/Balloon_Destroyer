@@ -36,7 +36,7 @@ while True:
         area = cv2.contourArea(c)
 
         if area > 6000:
-            # Start tracking if the object is large enough
+            # Start tracking only if the object is large enough
             object_tracking = True
 
             x, y, w, h = cv2.boundingRect(c)
@@ -53,7 +53,7 @@ while True:
             tolerance = 100
 
             if abs(dX) <= tolerance and abs(dY) <= tolerance:
-                send_command('S')  # Stop if the object is approximately centered
+                send_command('S')  # Stop if the object is almost centered
                 send_command('X')
                 time.sleep(1)
             else:
@@ -73,8 +73,7 @@ while True:
             send_command('S')
         else:
             # Scanning mode: Move left and right
-            send_command('L')  # Replace with your scanning logic
-
+            send_command('L')  
     cv2.imshow('frame', frame)
     cv2.imshow('mask', mask)
 
